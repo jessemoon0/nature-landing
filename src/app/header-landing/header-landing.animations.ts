@@ -7,17 +7,17 @@ export const animateMainHeader =
         keyframes([
           style({
             'opacity': 0,
-            'transform': 'translateX(-100px)',
+            'transform': 'translateX(-10rem)',
             offset: 0
           }),
           style({
             'opacity': 1,
-            'transform': 'translateX(20px)',
+            'transform': 'translateX(1rem)',
             offset: 0.8
           }),
           style({
             'opacity': 1,
-            'transform': 'translateX(0)',
+            'transform': 'translate(0)',
             offset: 1
           })
       ]))
@@ -31,20 +31,36 @@ export const animateSubHeader =
         keyframes([
           style({
             'opacity': 0,
-            'transform': 'translateX(100px)',
+            'transform': 'translateX(10rem)',
             offset: 0
           }),
           style({
             'opacity': 1,
-            'transform': 'translateX(-20px)',
+            'transform': 'translateX(-1rem)',
             offset: 0.8
           }),
           style({
             'opacity': 1,
-            'transform': 'translateX(0)',
+            'transform': 'translate(0)',
             offset: 1
           })
         ]))
+    ])
+  ]);
+
+export const animateCallToActionBtn =
+  trigger('moveFromBelowTrig', [
+    transition(':enter', [
+      style({
+        'opacity': 0,
+        'transform': 'translateY(3rem)'
+      }),
+      animate('500ms 1000ms ease-out',
+        style({
+          'opacity': 1,
+          'transform': 'translateY(0)'
+        })
+      )
     ])
   ]);
 

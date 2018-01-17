@@ -9,23 +9,83 @@ Dark green: #28b485
 
 */
 
-@import 'variables';
+@import 'assets/abstracts/variables';
 
 // Reset browser CSS
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  // Good practice to put box-sizing: border-box in body and inherit here.
+  box-sizing: inherit;
+}
+
+// Root font size for REM units (responsive design).
+// Browser default font size is 16px so we use 62.5% = 10px. So 1 rem = 10px for easier calculations.
+html {
+  font-size: 62.5%;
 }
 
 // Add font related styles here
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
   line-height: 1.7;
   color: $normal-text;
-  padding: 30px;
+  padding: 3rem;
+  box-sizing: border-box;
 }
 
+.btn {
+  &:link, &:visited {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 200ms;
+    // For the ::after button
+    position: relative;
+  }
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+    // Make the "new button" (see ::after below) to scale and fade out
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+  // When clicking element
+  &:active {
+    // Because of hover, when we click, element goes down a bit, simulating animation click
+    transform: translateY(-.1rem);
+    // Effect of bringing the button closer to screen when clicking
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+  }
+  // Add a "new button" to be animated
+  &::after {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    // Position the new button behind our normal button
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    // Transition to :hover::after
+    transition: all 400ms;
+  }
+}
 
+.btn--white {
+  background-color: #fff;
+  color: $normal-text;
+  &::after {
+    background-color: #fff;
+  }
+}
