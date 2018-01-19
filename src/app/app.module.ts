@@ -5,11 +5,27 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HeaderLandingComponent } from './header-landing/header-landing.component';
 
+import { MainContentComponent } from './main-content/main-content.component';
+import {AbstractComponent} from './main-content/abstract/abstract.component';
+import { FeaturesComponent } from './main-content/features/features.component';
+
+import { FooterComponent } from './footer/footer.component';
+import { PackagesComponent } from './main-content/packages/packages.component';
+import { ReviewsComponent } from './main-content/reviews/reviews.component';
+import { ContactComponent } from './main-content/contact/contact.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderLandingComponent
+    HeaderLandingComponent,
+    MainContentComponent,
+    AbstractComponent,
+    FooterComponent,
+    FeaturesComponent,
+    PackagesComponent,
+    ReviewsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

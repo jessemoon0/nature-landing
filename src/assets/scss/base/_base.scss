@@ -1,0 +1,19 @@
+// Reset browser CSS
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  // Good practice to put box-sizing: border-box in body and inherit here.
+  box-sizing: inherit;
+}
+
+// Root font size for REM units (responsive design).
+// Browser default font size is 16px so we use 62.5% = 10px. So 1 rem = 10px for easier calculations.
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}

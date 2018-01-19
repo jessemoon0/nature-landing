@@ -1,11 +1,11 @@
-@import '../../assets/abstracts/variables';
+@import '../../assets/scss/abstracts/variables';
 
 .header {
   height: 95vh;
   background: linear-gradient(
         to right bottom,
-        $transparent-light-green,
-        $transparent-dark-green
+      $color-primary-light-transparent,
+      $color-primary-dark-transparent
       ),
       url(../../assets/img/hero.jpg)
       top;
@@ -14,43 +14,41 @@
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   // For absolute position on the child
   position: relative;
-}
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-  .header__logo {
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+  &__logo {
     height: 3.5rem;
   }
-}
-
-.header__text-box {
-  // Center all the text
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  // background-color: red; // Show all the box model to see its centered.
-  transform: translate(-50%, -50%);
-  // For button
-  text-align: center;
-  .heading-primary {
-    color: #fff;
-    text-transform: uppercase;
-    // Helps the animation to execute better
-    backface-visibility: hidden;
-    margin-bottom: 6rem;
-    .heading-primary--main {
-      display: block;
-      font-size: 6rem;
-      font-weight: 400;
-      letter-spacing: 3.5rem;
-    }
-    .heading-primary--sub {
-      display: block;
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: 1.75rem;
+  &__text-box {
+    // Center all the text
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    // background-color: red; // Show all the box model to see its centered.
+    transform: translate(-50%, -50%);
+    // For button
+    text-align: center;
+    .heading-primary {
+      color: $color-white;
+      text-transform: uppercase;
+      // Helps the animation to execute better
+      backface-visibility: hidden;
+      margin-bottom: 6rem;
+      &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+      }
+      &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.75rem;
+      }
     }
   }
 }
