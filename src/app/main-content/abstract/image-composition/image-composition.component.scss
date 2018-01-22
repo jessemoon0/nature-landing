@@ -1,0 +1,41 @@
+@import '../../../../assets/scss/abstracts/variables';
+
+.composition {
+  position: relative;
+  &__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
+    border-radius: 2px;
+    position: absolute;
+    // To overlap images on hover
+    z-index: 10;
+    transition: all 200ms;
+    // To make the border have a space with the image
+    outline-offset: 2rem;
+    &--p1 {
+      left: 0;
+      top: -2rem;
+    }
+    &--p2 {
+      right: 0;
+      top: 2rem;
+    }
+    &--p3 {
+      left: 20%;
+      top: 10rem;
+    }
+
+    &:hover {
+      transform: scale(1.05) translateY(-.5rem);
+      box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
+      z-index: 20;
+      // Green border. This property works with outline-offset
+      outline: 1.5rem solid $color-primary;
+    }
+  }
+  // Effect to lower the size of the non - selected images
+  &:hover &__photo:not(:hover) {
+    transform: scale(.9);
+  }
+
+}
