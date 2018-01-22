@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { PackagesComponent } from './main-content/packages/packages.component';
 import { ReviewsComponent } from './main-content/reviews/reviews.component';
 import { ContactComponent } from './main-content/contact/contact.component';
+import { ImageCompositionComponent } from './main-content/abstract/image-composition/image-composition.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ContactComponent } from './main-content/contact/contact.component';
     FeaturesComponent,
     PackagesComponent,
     ReviewsComponent,
-    ContactComponent
+    ContactComponent,
+    ImageCompositionComponent
   ],
   imports: [
     BrowserModule,

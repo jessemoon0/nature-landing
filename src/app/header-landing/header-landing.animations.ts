@@ -11,13 +11,12 @@ export const animateMainHeader =
             offset: 0
           }),
           style({
-            'opacity': 1,
             'transform': 'translateX(1rem)',
             offset: 0.8
           }),
           style({
             'opacity': 1,
-            'transform': 'translate(0)',
+            'transform': 'translateX(0)',
             offset: 1
           })
       ]))
@@ -35,7 +34,6 @@ export const animateSubHeader =
             offset: 0
           }),
           style({
-            'opacity': 1,
             'transform': 'translateX(-1rem)',
             offset: 0.8
           }),

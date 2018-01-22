@@ -3,17 +3,19 @@
 
 .row {
   max-width: $grid-width;
-  background-color: #eee;
+  // Uncomment For Testing purposes:
+  // background-color: #eee;
   margin: 0 auto;
-  // Don't add margin to the last row.
+  // This means don't add margin to the last row.
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
   }
   @include clearfix;
 
   [class^='col-'] {
-    background-color: orangered;
-    color: #fff;
+    // Uncomment For Testing purposes:
+    // background-color: orangered;
+    // color: #fff;
     float: left;
     &:not(:last-child) {
       margin-right: $gutter-horizontal;

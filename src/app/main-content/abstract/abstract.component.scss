@@ -1,0 +1,9 @@
+@import '../../../assets/scss/abstracts/variables';
+
+.section-about {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0;
+  // A little trick to move up the section up to the point of where the right polygon corner ends
+  // We know that the polygon has 75vh in the right part and 95vh on the left side, so difference is 20vh
+  margin-top: -20vh;
+}

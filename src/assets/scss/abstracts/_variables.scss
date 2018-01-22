@@ -1,8 +1,4 @@
 
-
-// Text color
-$normal-text: #777;
-
 // Branding colors
 $color-primary-light: #7ed56f;
 $color-primary-light-transparent: rgba($color-primary-light, 0.8);
@@ -13,6 +9,12 @@ $color-primary-dark-transparent: rgba($color-primary-dark, 0.8);
 // Normal colors
 $color-white: #fff;
 $color-black: #000;
+$color-grey-dark: #777;
+// Very subtle Contrast to the white color
+$color-grey-light-1: #f7f7f7;
+
+// Font sizes
+$default-font-size: 1.6rem;
 
 // GRID
 $grid-width: 114rem;
