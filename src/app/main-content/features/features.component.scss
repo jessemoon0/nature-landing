@@ -1,0 +1,22 @@
+@import '../../../assets/scss/abstracts/variables';
+
+.section-features {
+  padding: 20rem 0;
+  background: linear-gradient(
+      to right bottom,
+      $color-primary-light-transparent,
+      $color-primary-dark-transparent
+  ),
+  url(../../../assets/img/nat-4.jpg)
+  top;
+  background-size: cover;
+
+  // Another way of doing a clip-path
+  transform: skewY(-7deg);
+  margin-top: -10rem;
+  // Un skew everything inside the skewed background
+  // This selector is for the direct children of the section features: .section-features > *
+  & > * {
+    transform: skewY(7deg);
+  }
+}
