@@ -11,6 +11,7 @@
       top;
   // Must go below the background: property
   background-size: cover;
+  // No IE, No MS Edge
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   // For absolute position on the child
   position: relative;
