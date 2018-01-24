@@ -1,0 +1,61 @@
+@import '../abstracts/variables';
+
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, .1);
+  background-color: $color-white;
+  border-radius: 3px;
+  padding: 6rem 6rem 6rem 9rem;
+  font-size: $default-font-size;
+  transform: skewX(-12deg);
+
+  & > * {
+    transform: skewX(12deg);
+  }
+  &__shape {
+    // Element must float & have dimensions for shape-outside to work
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    // We add the skew here as we cant have more than 1 transform (they overwrite).
+    transform: translateX(-3rem) skewX(12deg);
+    position: relative;
+    overflow: hidden;
+  }
+  &__img {
+    height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    transition: all 500ms;
+    backface-visibility: hidden;
+    filter: blur(0);
+  }
+  &__text {
+
+  }
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all 500ms;
+    backface-visibility: hidden;
+  }
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1);
+    filter: brightness(80%) blur(3px);
+  }
+}
+
+
