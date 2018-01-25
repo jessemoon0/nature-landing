@@ -1,6 +1,8 @@
 @import '../abstracts/variables';
 
 .btn {
+  // This "&" by itself is apply the styles to the .btn class also (if not, it will only be applied to <a>).
+  &,
   &:link, &:visited {
     font-size: $default-font-size;
     text-transform: uppercase;
@@ -11,6 +13,10 @@
     transition: all 200ms;
     // For the ::after button
     position: relative;
+
+    // Styles for the <button> HTML element
+    border: none;
+    cursor: pointer;
   }
   &:hover {
     transform: translateY(-3px);
@@ -22,7 +28,9 @@
     }
   }
   // When clicking element
-  &:active {
+  &:active,
+  &:focus {
+    outline: none;
     // Because of hover, when we click, element goes down a bit, simulating animation click
     transform: translateY(-.1rem);
     // Effect of bringing the button closer to screen when clicking
@@ -45,7 +53,7 @@
   }
   &--white {
     background-color: $color-white;
-    color: $color-grey-dark;
+    color: $color-grey-dark-1;
     &::after {
       background-color: $color-white;
     }

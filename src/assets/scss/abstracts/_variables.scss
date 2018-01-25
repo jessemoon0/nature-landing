@@ -1,25 +1,29 @@
 
-// Branding colors
+// BRANDING COLORS
 $color-primary-light: #7ed56f;
 $color-primary-light-transparent: rgba($color-primary-light, 0.8);
 $color-primary: #55c57a;
 $color-primary-dark: #28b485;
 $color-primary-dark-transparent: rgba($color-primary-dark, 0.8);
 
-// Normal colors
+// NORMAL COLORS
 $color-white: #fff;
 $color-black: #000;
-$color-grey-dark: #777;
-// Very subtle Contrast to the white color
+// Grey scale
+$color-grey-dark-1: #777;
+$color-grey-dark-2: #999;
 $color-grey-light-1: #f7f7f7;
 $color-grey-light-2: #eee;
 
-// Card colors
+// CARD COLORS
 $color-secondary-light: #ffb900;
 $color-secondary-dark: #ff7730;
 
 $color-tertiary-light: #2998ff;
 $color-tertiary-dark: #5643fa;
+
+// FORM COLORS
+
 
 // Font sizes
 $default-font-size: 1.6rem;
