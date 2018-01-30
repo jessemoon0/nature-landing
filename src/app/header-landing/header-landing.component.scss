@@ -1,4 +1,5 @@
 @import '../../assets/scss/abstracts/variables';
+@import '../../assets/scss/abstracts/mixins';
 
 .header {
   height: 95vh;
@@ -25,11 +26,8 @@
   }
   &__text-box {
     // Center all the text
-    position: absolute;
-    top: 40%;
-    left: 50%;
+    @include center-in-bg-img;
     // background-color: red; // Show all the box model to see its centered.
-    transform: translate(-50%, -50%);
     // For button
     text-align: center;
   }

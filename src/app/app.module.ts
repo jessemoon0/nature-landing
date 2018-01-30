@@ -14,6 +14,7 @@ import { PackagesComponent } from './main-content/packages/packages.component';
 import { ReviewsComponent } from './main-content/reviews/reviews.component';
 import { ContactComponent } from './main-content/contact/contact.component';
 import { ImageCompositionComponent } from './main-content/abstract/image-composition/image-composition.component';
+import { NavigationMenuComponent } from './navigation-menu/navigation-menu.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { ImageCompositionComponent } from './main-content/abstract/image-composi
     PackagesComponent,
     ReviewsComponent,
     ContactComponent,
-    ImageCompositionComponent
+    ImageCompositionComponent,
+    NavigationMenuComponent
   ],
   imports: [
     BrowserModule,
