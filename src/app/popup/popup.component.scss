@@ -1,0 +1,104 @@
+@import '../../assets/scss/abstracts/variables';
+@import '../../assets/scss/abstracts/mixins';
+
+.popup {
+  // Darkened background
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($color-black, .8);
+  z-index: 9999;
+
+  // Initial popup state: hidden. Opens with :target
+  opacity: 0;
+  visibility: hidden;
+  transition: all 300ms;
+
+  // -webkit-backdrop-filter is Only Safari - Using @supports
+  @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); // We leave this for when is supported in the future
+    background-color: rgba($color-black, .3);
+  }
+
+  // Centering the content
+  &__content {
+    // Important to have this at the top
+    @include center-in-bg-img;
+    //height: 50rem; // Testing height for no content
+    width: 75%;
+    background-color: $color-white;
+    box-shadow: 0 2rem 4rem rgba($color-black, .2);
+    border-radius: 3px;
+    overflow: hidden; // Stops images overlapping content
+    display: table;
+    // Initial state of the popup's animation.
+    opacity: 0;
+    // We have to repeat our mixin's transform so it doesn't generate the 2 transforms error
+    transform: translate(-50%, -50%) scale(.5);
+    transition: all 400ms 300ms; // With the delay, we allow the dark background to come in first
+  }
+
+  &__left {
+    width: 33.33333333%;
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  &__right {
+    width: 66.66666667%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3rem 5rem;
+
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+    column-count: 2;
+    column-gap: 4rem; // Default is 1em = 14px in this case.
+    column-rule: 1px solid $color-grey-light-2;
+    hyphens: auto;
+  }
+
+  // Opens the popup
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      color: $color-grey-dark-1;
+      position: absolute;
+      top: 2.5rem;
+      right: 2.5rem;
+      font-size: 3rem;
+      text-decoration: none;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  // Popup's animation when opening
+  &:target &__content {
+    // Initial state of the popup's animation.
+    opacity: 1;
+    // We have to repeat our mixin's transform so it doesn't generate the 2 transforms error
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

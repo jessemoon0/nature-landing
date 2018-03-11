@@ -1,7 +1,11 @@
 @import '../../../assets/scss/abstracts/variables';
+@import '../../../assets/scss/abstracts/mixins';
 
 .section-stories {
   padding: 15rem 0;
   // For video-bg
   position: relative;
+  @include respond(tab-port) {
+    padding: 10rem 0;
+  }
 }

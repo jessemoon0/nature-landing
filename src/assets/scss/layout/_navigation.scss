@@ -18,6 +18,15 @@
     z-index: 2000;
     text-align: center;
     cursor: pointer;
+
+    @include respond(tab-port) { // < 900px
+      top: 4rem;
+      right: 4rem;
+    }
+    @include respond(phone) { // < 600px
+      top: 3rem;
+      right: 3rem;
+    }
   }
 
   &__background {
@@ -32,13 +41,22 @@
     z-index: 1000;
 
     transition: transform 800ms cubic-bezier(.86, 0, .07, 1);
+    @include respond(tab-port) { // < 900px
+      top: 4.5rem;
+      right: 4.5rem;
+    }
+    @include respond(phone) { // < 600px
+      top: 3.5rem;
+      right: 3.5rem;
+    }
   }
 
   &__nav {
     height: 100vh;
     position: fixed;
     top: 0;
-    left: 0;
+    // Fixes bug of clickable hidden nav links at the left side of page
+    left: -100%;
     z-index: 1500;
 
     // Beginning state: Not shown. We use width instead of visibility because of animation
@@ -97,6 +115,8 @@
   &__checkbox:checked ~ &__nav {
     opacity: 1;
     width: 100%;
+    // Fixes bug of clickable hidden nav links at the left side of page
+    left: 0;
   }
 
   // ICON

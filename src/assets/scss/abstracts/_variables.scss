@@ -19,13 +19,11 @@ $color-grey-light-2: #eee;
 
 // CARD COLORS
 $color-secondary-light: #ffb900;
+$color-secondary-light-transparent: rgba($color-secondary-light, 0.8);
 $color-secondary-dark: #ff7730;
 
 $color-tertiary-light: #2998ff;
 $color-tertiary-dark: #5643fa;
-
-// FORM COLORS
-
 
 // Font sizes
 $default-font-size: 1.6rem;
@@ -33,4 +31,5 @@ $default-font-size: 1.6rem;
 // GRID
 $grid-width: 114rem;
 $gutter-vertical: 8rem;
+$gutter-vertical-small: 6rem;
 $gutter-horizontal: 6rem;

@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
 })
 export class NavigationMenuComponent {
 
+  listItems: Array<string> = ['About Natous', 'Your Benefits', 'Popular Tours', 'Stories', 'Book Now'];
 
 }

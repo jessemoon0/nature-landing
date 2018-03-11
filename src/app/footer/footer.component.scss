@@ -1,14 +1,20 @@
 @import '../../assets/scss/abstracts/variables';
+@import '../../assets/scss/abstracts/mixins';
 
 .footer {
   background-color: $color-grey-dark-3;
   padding: 10rem 0;
   font-size: 1.4rem;
   color: $color-grey-light-1;
-
+  @include respond(tab-port) { // < 900px
+    padding: 8rem 0;
+  }
   &__logo-box {
     text-align: center;
     margin-bottom: 8rem;
+    @include respond(tab-port) { // < 900px
+      margin-bottom: 6rem;
+    }
   }
 
   &__logo {
@@ -22,6 +28,10 @@
     padding-top: 2rem;
     // We put this so the line doesn't occupy 100% of width
     display: inline-block;
+    @include respond(tab-port) { // < 900px
+      width: 100%;
+      text-align: center;
+    }
   }
 
   &__list {
@@ -59,5 +69,9 @@
     padding-top: 2rem;
     width: 80%;
     float: right;
+    @include respond(tab-port) { // < 900px
+      width: 100%;
+      float: none;
+    }
   }
 }

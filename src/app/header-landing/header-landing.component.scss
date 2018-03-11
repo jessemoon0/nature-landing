@@ -2,20 +2,42 @@
 @import '../../assets/scss/abstracts/mixins';
 
 .header {
-  height: 95vh;
   background: linear-gradient(
         to right bottom,
       $color-primary-light-transparent,
       $color-primary-dark-transparent
       ),
-      url(../../assets/img/hero.jpg)
+      url(../../assets/img/hero-small.jpg)
       top;
   // Must go below the background: property
   background-size: cover;
-  // No IE, No MS Edge
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  @supports (clip-path: polygon(0 0)) {
+    // No IE, No MS Edge
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    height: 95vh;
+  }
+  // If its not supported we want this height:
+  height: 85vh;
+
   // For absolute position on the child
   position: relative;
+
+  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+         only screen and (-webkit-device-pixel-ratio: 2) and (min-width: 37.5em),
+         only screen and (min-width: 125em) {
+    background: linear-gradient(
+        to right bottom,
+        $color-secondary-light-transparent,
+        $color-primary-dark-transparent
+    ),
+    url(../../assets/img/hero.jpg)
+    top;
+  }
+
+  @include respond(phone) { // < 600px
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
   &__logo-box {
     position: absolute;
     top: 4rem;
@@ -27,7 +49,7 @@
   &__text-box {
     // Center all the text
     @include center-in-bg-img;
-    // background-color: red; // Show all the box model to see its centered.
+    // background-color: red; // Testing: Show all the box model to see its centered.
     // For button
     text-align: center;
   }
