@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -16,36 +16,19 @@ import { ContactComponent } from './main-content/contact/contact.component';
 import { ImageCompositionComponent } from './main-content/abstract/image-composition/image-composition.component';
 import { NavigationMenuComponent } from './navigation-menu/navigation-menu.component';
 import { PopupComponent } from './popup/popup.component';
-import { CommonModule } from '@angular/common';
-import { TransferHttpCacheModule } from '@nguniversal/common';
-import { HttpClientModule } from '@angular/common/http';
-import { NgtUniversalModule } from '@ng-toolkit/universal';
+import { AppModule } from './app.module';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderLandingComponent,
-    MainContentComponent,
-    AbstractComponent,
-    FooterComponent,
-    FeaturesComponent,
-    PackagesComponent,
-    ReviewsComponent,
-    ContactComponent,
-    ImageCompositionComponent,
-    NavigationMenuComponent,
-    PopupComponent
-  ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    
     BrowserAnimationsModule,
-    CommonModule,
-    TransferHttpCacheModule,
-    HttpClientModule,
-    NgtUniversalModule
+    
+    AppModule,
+    
+    BrowserTransferStateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppBrowserModule { }
