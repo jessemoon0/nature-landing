@@ -15,5 +15,16 @@
     "skipServer": false,
     "skipUniversal": false,
     "webpack": true
+  },
+  "serverless": {
+    "project": "nature-landing",
+    "provider": "aws",
+    "skipInstall": false,
+    "directory": ".",
+    "clientProject": "nature-landing",
+    "serverless": {
+      "aws": {},
+      "gcloud": {}
+    }
   }
 }

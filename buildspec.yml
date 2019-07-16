@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+    commands:
+      - npm ci
+      - npm install -g serverless
+      - npm run build:serverless:deploy
+
+# THIS CONFIG IS IF WE WANT TO SEND THE FILES TO AN ARTIFACT
+#artifacts:
+#  files:
+#    - '**/*'
+#  discard-paths: yes
+#  base-directory: 'dist/angular-skeleton'
