@@ -89,7 +89,7 @@
             [
               "nature-landing",
               "production",
-              "eu-central-1",
+              "us-east-2",
               "lambdaRole"
             ]
           ]
@@ -103,7 +103,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/nature-landing/production/1563254314629-2019-07-16T05:18:34.629Z/nature-landing.zip"
+          "S3Key": "serverless/nature-landing/production/1563257298718-2019-07-16T06:08:18.718Z/nature-landing.zip"
         },
         "FunctionName": "nature-landing-production-api",
         "Handler": "lambda.universal",
@@ -114,7 +114,7 @@
             "Arn"
           ]
         },
-        "Runtime": "nodejs6.10",
+        "Runtime": "nodejs10.x",
         "Timeout": 10
       },
       "DependsOn": [
@@ -122,14 +122,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "ApiLambdaVersionEpLSwyFQZpcLgEe4rXUJYdkR52eGUaxlDM5dAuLdw": {
+    "ApiLambdaVersion7joRdy2OuSDeXLTqSlOPz4Bj263GX1GJ2vjE2QQ18": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ApiLambdaFunction"
         },
-        "CodeSha256": "aCfAvfb8rHIG7Y6kwjKpb9gTSUL09DiatqwmzZp+hIE="
+        "CodeSha256": "kWejWsG4GF0TEgUBg7S/73NKkDILOtpWr2KKvOxlY64="
       }
     },
     "ApiGatewayRestApi": {
@@ -247,7 +247,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1563254267305": {
+    "ApiGatewayDeployment1563257246980": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -317,7 +317,7 @@
     "ApiLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ApiLambdaVersionEpLSwyFQZpcLgEe4rXUJYdkR52eGUaxlDM5dAuLdw"
+        "Ref": "ApiLambdaVersion7joRdy2OuSDeXLTqSlOPz4Bj263GX1GJ2vjE2QQ18"
       }
     },
     "ServiceEndpoint": {
@@ -330,7 +330,7 @@
             {
               "Ref": "ApiGatewayRestApi"
             },
-            ".execute-api.eu-central-1.",
+            ".execute-api.us-east-2.",
             {
               "Ref": "AWS::URLSuffix"
             },
